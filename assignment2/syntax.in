@@ -1,0 +1,30 @@
+<program> ::= begin <compoundstmt> end
+
+<compoundstmt> ::= <stmtlist>
+<stmtlist> ::= <statement> | <statement>; <stmtlist>
+<statement> ::= <assignstmt> | <declarationstmt> | <iostmt> | <ifstmt> | <forstmt> | <whilestmt> | <returnstmt> 
+
+<assignstmt> ::= <identifier>=<expression>
+<expression> ::= <expression> + <term> | <expression> - <term> | <term>
+<term> ::= <term> * <factor> | <term> / <factor> | <factor>
+<factor> ::= (<expression>) | <identifier> | <integer_const>
+
+<declarationstmt> ::= <simpledeclaration> | <arraydeclaration>
+<simpledeclaration> ::= <identifier>:<type>
+<type> ::= <simpletype> | <arraytype>
+<simpletype> ::= int | char | string
+<arraytype> ::= array[<simpletype>]
+
+<iostmt> ::= read(<identifier>) | write(<identifier>) | write(<string_const>)
+
+<ifstmt> ::= if(<condition>) then <compoundstmt> | if(<condition>) then <compoundstmt> else <compoundstatement>
+
+<condition> ::= <expression><relation><expression>
+<relation> ::= < | <= | == | != | >= | >
+
+<forstmt> ::= for<forconditions><compoundstmt>
+<forconditions> ::= (int <asignmentstmt>; <condition>;<assignmentstmt>)
+
+<whilestmt> ::= while(<condition>) <compoundstmt>
+
+<returnstmt> ::= return <expression>
