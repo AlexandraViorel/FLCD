@@ -1,16 +1,16 @@
-<program> ::= begin <compoundstmt> end
+<program> ::= <compoundstmt>
 
-<compoundstmt> ::= <stmtlist>
+<compoundstmt> ::= begin <stmtlist> end
 <stmtlist> ::= <statement> | <statement>; <stmtlist>
 <statement> ::= <assignstmt> | <declarationstmt> | <iostmt> | <ifstmt> | <forstmt> | <whilestmt> | <returnstmt> 
 
 <assignstmt> ::= <identifier>=<expression>
 <expression> ::= <expression> + <term> | <expression> - <term> | <term>
 <term> ::= <term> * <factor> | <term> / <factor> | <factor>
-<factor> ::= (<expression>) | <identifier> | <integer_const>
+<factor> ::= (<expression>) | <identifier> | <integer_const> | <array_factor_const> | {<integer_const>} | {<factor> <integer_const}
+<array_factor_const> ::= <integer_const>,
 
-<declarationstmt> ::= <simpledeclaration> | <arraydeclaration>
-<simpledeclaration> ::= <identifier>:<type>
+<declarationstmt> ::= <identifier>:<type> 
 <type> ::= <simpletype> | <arraytype>
 <simpletype> ::= int | char | string
 <arraytype> ::= array[<simpletype>]
