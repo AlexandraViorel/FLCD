@@ -1,14 +1,14 @@
 <program> ::= <compoundstmt>
 
 <compoundstmt> ::= begin <stmtlist> end
-<stmtlist> ::= <statement> | <statement>; <stmtlist>
+<stmtlist> ::= <statement>; | <statement>; <stmtlist>
 <statement> ::= <assignstmt> | <declarationstmt> | <iostmt> | <ifstmt> | <forstmt> | <whilestmt> | <returnstmt> 
 
-<assignstmt> ::= <identifier>=<expression>
+<assignstmt> ::= <identifier>=<expression> | <identifier>={<array_factor_int>}
 <expression> ::= <expression> + <term> | <expression> - <term> | <term>
 <term> ::= <term> * <factor> | <term> / <factor> | <factor>
-<factor> ::= (<expression>) | <identifier> | <integer_const> | <array_factor_const> | {<integer_const>} | {<factor> <integer_const}
-<array_factor_const> ::= <integer_const>,
+<factor> ::= (<expression>) | <identifier> | <integer_const>
+<array_factor_int> ::= <integer_const> | <array_factor_int>, <integer_const>
 
 <declarationstmt> ::= <identifier>:<type> 
 <type> ::= <simpletype> | <arraytype>
@@ -23,7 +23,7 @@
 <relation> ::= < | <= | == | != | >= | >
 
 <forstmt> ::= for<forconditions><compoundstmt>
-<forconditions> ::= (int <asignmentstmt>; <condition>;<assignmentstmt>)
+<forconditions> ::= (int <assignmentstmt>; <condition>;<assignmentstmt>)
 
 <whilestmt> ::= while(<condition>) <compoundstmt>
 
