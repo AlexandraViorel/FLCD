@@ -1,0 +1,13 @@
+1err. Sum of 3 numbers
+
+begin
+	a:int;~
+	b:int;
+	1c:int;
+	sum:int;
+	read(a);
+	read(b);
+	read(1c);
+	sum=a+(b+c);
+	write(sum);
+end
