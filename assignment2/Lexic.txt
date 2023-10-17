@@ -1,0 +1,30 @@
+Alphabet:
+	a) A-Z (upper case letters of the English alphabet)
+	b) a-z (lower case letters of the English alphabet)
+	c) 0-9 (digits)
+	d) _ (underscore character)
+
+Lexic:
+	a) Special symbols:
+		• operators: +, -, *, /, =, ==, >, >=, <, <=, !=
+		• separators: {}, (), [], ;, space, :, ,
+		• reserved words: begin, end, int, char, string, array, if, then, else, for, while, read, write, return
+	b) Identifiers: 
+		A sequence of letters, digits or “_”, such that the first character is a letter
+		• <identifier> ::= <letter> | <identifier><letter> | <identifier>_ | <identifier><digit>
+		• <letter> ::= A | B | … | Z | a | b | … | z
+		• <digit> ::= 0 | 1 | … | 9
+	c) Constants:
+		1. integer:
+			• <integer_const> ::= <unsigned> | <sign><unsigned> | 0
+			• <sign> ::= + | -
+			• <unsigned> ::= <nonzerodigit> | <nonzerodigit><digitsequence>
+			• <digitsequence> ::= <digit> | <digit><digitsequence>
+			• <nonzerodigit> ::= 1 | 2 | … | 9
+			• <digit> ::= 0 | <nonzerodigit>
+		2. character:
+			• <char_const> ::= ‘<letter>’ | ‘<digit>’
+		3. string:
+			• <string_const> ::= “<string>” | “”
+			• <string> ::= <char> | <string><char>
+			• <char> ::= <letter> | <digit> | _ | “ “
