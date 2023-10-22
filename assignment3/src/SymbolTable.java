@@ -13,7 +13,11 @@ public class SymbolTable<K> {
         this.hashTable.insertNode(t);
     }
 
-    public int search(K t) {
+    public int searchPosition(K t) {
         return this.hashTable.searchPosition(t);
+    }
+
+    public K searchByPosition(int pos) {
+        return this.hashTable.searchByPosition(pos);
     }
 }
