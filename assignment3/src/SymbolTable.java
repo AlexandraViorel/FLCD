@@ -20,4 +20,11 @@ public class SymbolTable<K> {
     public K searchByPosition(int pos) {
         return this.hashTable.searchByPosition(pos);
     }
+    public int getSize() {
+        return this.hashTable.getSize();
+    }
+
+    public String string() {
+        return this.hashTable.toString();
+    }
 }
