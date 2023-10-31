@@ -63,4 +63,15 @@ public class HashTable<K> {
     public boolean isEmpty() {
         return size == 0;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < capacity; i++) {
+            if (table[i] != null) {
+                str.append(table[i].key.toString()).append(" => ").append(i).append("\n");
+            }
+        }
+        return str.toString();
+    }
 }
