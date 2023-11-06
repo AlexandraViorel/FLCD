@@ -1,9 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -45,11 +42,6 @@ public class Scanner {
             return false;
         }
 
-        var invalidStringConstantRegex = Pattern.compile("^\"[a-zA-Z][a-zA-Z_0-9]*");
-        if (invalidStringConstantRegex.matcher(line.substring(index)).find()) {
-            return false;
-        }
-
         var stringConstant = matcher.group(0);
         index += stringConstant.length();
         symbolTable.add(stringConstant);
@@ -71,7 +63,7 @@ public class Scanner {
             return false;
         }
 
-        var intConstant = matcher.group(1);
+        var intConstant = matcher.group(0);
         index += intConstant.length();
         symbolTable.add(intConstant);
         var position = symbolTable.searchPosition(intConstant);

@@ -10,7 +10,7 @@ public class Main {
 //        System.out.println(symbolTable.searchPosition("b"));
 //        System.out.println(symbolTable.searchPosition("01"));
 //        System.out.println(symbolTable.searchByPosition(97));
-        Scanner s = new Scanner("P1err.txt");
+        Scanner s = new Scanner("P3.txt");
         s.scan();
     }
 }
