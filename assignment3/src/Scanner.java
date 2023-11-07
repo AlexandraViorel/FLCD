@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Scanner {
-    private ArrayList<String> operators = new ArrayList<>(List.of("+", "-", "*", "/", "=", ">", ">=", "<", "<=", "!="));
+    private ArrayList<String> operators = new ArrayList<>(List.of("==", ">=", "<=", "!=", "+", "-", "*", "/", "=", ">", "<" ));
     private ArrayList<String> separators = new ArrayList<>(List.of("{", "}", "(", ")", "[", "]", ",", ";", ".",
             ":", "'", "\""));
     private ArrayList<String> reservedWords = new ArrayList<>(List.of("begin", "end", "int", "char", "string",
