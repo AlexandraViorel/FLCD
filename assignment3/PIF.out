@@ -51,7 +51,8 @@ len => -1
 id => 5
 = => -1
 id => 5
-intConstant => 92
++ => -1
+intConstant => 49
 ) => -1
 begin => -1
 id => 41

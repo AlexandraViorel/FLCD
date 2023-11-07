@@ -175,6 +175,9 @@ public class Scanner {
         if (index == line.length()) {
             return;
         }
+        if (tokenCase()) {
+            return;
+        }
         if (stringConstantCase()) {
             return;
         }
@@ -185,9 +188,6 @@ public class Scanner {
             return;
         }
         if (identifierCase()) {
-            return;
-        }
-        if (tokenCase()) {
             return;
         }
         throw new Exception("Lexical error at line: " + currentLine);
