@@ -72,7 +72,8 @@ public class Main {
 //        System.out.println(symbolTable.searchPosition("b"));
 //        System.out.println(symbolTable.searchPosition("01"));
 //        System.out.println(symbolTable.searchByPosition(97));
-        MyScanner s = new MyScanner("P1.txt");
+
+        MyScanner s = new MyScanner("P3.txt");
         s.scan();
 
 //        finiteAutomataCases();

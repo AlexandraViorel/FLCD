@@ -29,3 +29,12 @@ D 6 D
 D 7 D
 D 8 D
 D 9 D
+C 1 D
+C 2 D
+C 3 D
+C 4 D
+C 5 D
+C 6 D
+C 7 D
+C 8 D
+C 9 D

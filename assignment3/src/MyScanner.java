@@ -76,13 +76,15 @@ public class MyScanner {
 
 
         StringBuilder intConstant = new StringBuilder();
-        ArrayList<String> digits = new ArrayList<>(List.of("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"));
-        while (digits.contains(String.valueOf(line.charAt(index)))) {
-            intConstant.append(line.charAt(index));
-            index++;
+        ArrayList<String> digits = new ArrayList<>(List.of("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-"));
+        int i=index;
+        while (digits.contains(String.valueOf(line.charAt(i)))) {
+            intConstant.append(line.charAt(i));
+            i++;
         }
 
         if (faInteger.isAccepted(String.valueOf(intConstant))) {
+            index = i;
             symbolTable.add(intConstant.toString());
             var position = symbolTable.searchPosition(intConstant.toString());
             pif.addToPifList(new Pair<>("intConstant", position));
@@ -135,12 +137,11 @@ public class MyScanner {
                 "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
                 "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
                 "y", "z", "_"));
-        while (digits.contains(String.valueOf(line.charAt(index)))) {
-            identifier.append(line.charAt(index));
-            index++;
+        int i = index;
+        while (digits.contains(String.valueOf(line.charAt(i)))) {
+            identifier.append(line.charAt(i));
+            i++;
         }
-
-
 
 //        // see if it is really an identifier
 //        var isItIdentifier = Pattern.compile("^[a-zA-Z][a-zA-Z0-9_]*:");
@@ -153,10 +154,11 @@ public class MyScanner {
             // see if it is already in the symbol table
             var position = symbolTable.searchPosition(String.valueOf(identifier));
             if (position != -1) {
-//            index += identifier.length();
+                index = i;
                 pif.addToPifList(new Pair<>("id", position));
                 return true;
             }
+            index = i;
             symbolTable.add(String.valueOf(identifier));
             position = symbolTable.searchPosition(String.valueOf(identifier));
             pif.addToPifList(new Pair<>("id", position));
