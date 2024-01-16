@@ -194,16 +194,15 @@ int main(int argc, char** argv)
 
   printf("Starting parsing...\n");
 
-  if (!yyparse()) 
+  if (yyparse() == 0) 
   {
-    printf("Parsing failed!\n");
-    return 0;
-  }
-  else {
     printf("Parsing successful!\n");
     printProductions();
     return 0;
   }
+
+  printf("Parsing failed!\n");
+  return 0;
 
 
 }
